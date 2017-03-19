@@ -69,5 +69,7 @@
       "transform-es2015-modules-commonjs"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "electron": "^1.6.3"
+  }
 }

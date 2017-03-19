@@ -8,6 +8,7 @@ import mkdirp from 'mkdirp';
 import {init as initErrorReporter} from '../common/reporter';
 import logger from '../common/logger';
 import * as settings from '../common/settings-manager';
+import KapTouchBar from './kap-touch-bar';
 
 import autoUpdater from './auto-updater';
 import analytics from './analytics';
@@ -220,6 +221,7 @@ function getCropperWindow() {
 }
 
 app.on('ready', () => {
+  mainWindow.setTouchBar(KapTouchBar);
   globalShortcut.register('Cmd+Shift+5', () => {
     const recording = (appState === 'recording');
     mainWindow.webContents.send((recording) ? 'stop-recording' : 'prepare-recording');
